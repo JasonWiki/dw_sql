@@ -1,0 +1,62 @@
+CREATE TABLE IF NOT EXISTS dm_db.dm_kpi_sd (
+cal_dt string comment '业务日期',
+city_id string comment '城市id',
+qualify_community_cnt string comment '合格主营小区数',
+survey_sale_cnt string comment '在线实勘房源数',
+app_ud string comment 'APP_UD',
+call_pairs_cnt string comment '电话对数',
+first_wechat_cnt string comment '首次微聊对数',
+visit_cnt string comment '带看次数',
+broker_cnt string comment '经纪人数',
+medal_broker_cnt string comment '金牌经纪人数',
+trans_cnt string comment '成交量',
+city_name string comment "城市名称"，
+app_ud_past30days bigint comment '最近30天app ud',
+app_fud_past30days bigint comment '最近30天app fud',
+app_access_fud_past30days bigint comment '最近30天注册用户数',
+app_ud_td bigint comment '当天app ud',
+app_fud_td bigint comment '当天app fud',
+app_access_fud_td bigint comment '当天注册用户数',
+wechat_cnt_past30days bigint comment '最近30天微聊用户数',
+wechat_cnt_td bigint comment '当天微聊用户数',
+first_wechat_cnt_past30days bigint comment '最近30天首聊用户数',
+first_wechat_cnt_td bigint comment '当天首聊用户数',
+caller_cnt_past30days bigint comment '最近30天通话用户数',
+first_caller_cnt_past30days bigint comment '最近30天首次通话用户数',
+caller_cnt_td bigint comment '当天电话用户数',
+first_caller_cnt_td bigint comment '当天首次通话用户数',
+visit_ud_online_past30days bigint comment '最近30天线上带看用户数',
+more_visit_ud_online_past30days bigint comment '最近30天线上多看用户数',
+visit_ud_online_td bigint comment '当天线上带看用户数',
+trans_ud_online_past30days bigint comment '最近30天线上成交用户数',
+trans_ud_online_td bigint comment '当天线上成交用户数',
+new_demand_user_cnt_past30days bigint comment '最近30天线上录入用户数',
+new_demand_user_cnt_td bigint comment '当天线上录入用户数'
+)  PARTITIONED BY (p_dt STRING)
+STORED AS ORC;
+
+--modify time:2016-08-10
+alter table dm_db.dm_kpi_sd add columns
+(
+app_ud_past30days bigint comment '最近30天app ud',
+app_fud_past30days bigint comment '最近30天app fud',
+app_access_fud_past30days bigint comment '最近30天注册用户数',
+app_ud_td bigint comment '当天app ud',
+app_fud_td bigint comment '当天app fud',
+app_access_fud_td bigint comment '当天注册用户数',
+wechat_cnt_past30days bigint comment '最近30天微聊用户数',
+wechat_cnt_td bigint comment '当天微聊用户数',
+first_wechat_cnt_past30days bigint comment '最近30天首聊用户数',
+first_wechat_cnt_td bigint comment '当天首聊用户数',
+caller_cnt_past30days bigint comment '最近30天通话用户数',
+first_caller_cnt_past30days bigint comment '最近30天首次通话用户数',
+caller_cnt_td bigint comment '当天电话用户数',
+first_caller_cnt_td bigint comment '当天首次通话用户数',
+visit_ud_online_past30days bigint comment '最近30天线上带看用户数',
+more_visit_ud_online_past30days bigint comment '最近30天线上多看用户数',
+visit_ud_online_td bigint comment '当天线上带看用户数',
+trans_ud_online_past30days bigint comment '最近30天线上成交用户数',
+trans_ud_online_td bigint comment '当天线上成交用户数',
+new_demand_user_cnt_past30days bigint comment '最近30天线上录入用户数',
+new_demand_user_cnt_td bigint comment '当天线上录入用户数'
+);

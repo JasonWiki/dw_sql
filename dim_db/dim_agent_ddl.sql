@@ -1,0 +1,22 @@
+create table dw_db.dim_agent (
+  agent_id int comment '中心id',
+  agent_name string comment '中心名',
+  company_id int comment '公司id',
+  company_name string comment '公司名',
+  city_id int comment '城市id',
+  city_name string comment '城市名',
+  status string comment '状态 0-无效 1-有效 2-删除',
+  leader_uid int comment '中心总经理user id',
+  leader_aid int comment '中心总经理account id',
+  leader_name string comment '中心总经理名',
+  leader_phone string comment '中心总经理电话号码',
+  leader_work_number string comment '中心总经理工号',
+  leader_email_address string comment '中心总经理邮箱',
+  leader_id_number string comment '中心总经理身份证号',
+  leader_status string comment '中心总经理在职类型 1待入职 2在职 3离职',
+  leader_entry_time string comment '入职时间',
+  leader_dismission_time string comment '离职时间',
+  created_at string comment '创建时间',
+  updated_at string comment '更新时间',
+  deleted_at string comment '删除时间'
+);
